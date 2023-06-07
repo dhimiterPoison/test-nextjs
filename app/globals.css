@@ -5,3 +5,37 @@
 .navbar {
   /* background-color: rgb(164, 231, 208); */
 }
+
+/* modal */
+
+.modal {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.show {
+	display: block !important;
+}
+
+.modal .modal-body {
+	max-height: calc(100vh - 201px);
+	overflow-y: auto;
+}
+
+
+.modal-body .form-group:nth-last-child(2).is-lookup + .form-group {
+	margin-bottom: 6rem;
+}
+
+.modal-body .form-group:last-child.is-lookup {
+	margin-bottom: 12rem !important;
+}
+
+.modal-body .form-group:last-child.is-lookup.no-bottom-space {
+	margin-bottom: 4rem !important;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}

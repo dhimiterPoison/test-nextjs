@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    plugins: [require("daisyui")],
+    plugins: [],
 }
 
 module.exports = nextConfig
