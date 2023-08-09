@@ -1,4 +1,4 @@
-import PersonList from "./{components}/PersonList";
+import PersonList from './{components}/PersonList';
 
 export default function Home() {
     return (

@@ -1,5 +1,7 @@
+'use client'
 import React from 'react';
 import { faker } from '@faker-js/faker';
+import { useDebouncedState } from '@mantine/hooks';
 
 type User = {
     userId: string;
@@ -15,8 +17,8 @@ type User = {
 function createRandomUser(): User {
     return {
         userId: faker.string.uuid(),
-        name: faker.name.firstName(),
-        surname: faker.name.lastName(),
+        name: faker.person.firstName(),
+        surname: faker.person.lastName(),
         email: faker.internet.email(),
         avatar: faker.image.avatar(),
         password: faker.internet.password(),
@@ -25,21 +27,33 @@ function createRandomUser(): User {
     };
 }
 
-const users : User[] = faker.helpers.multiple(createRandomUser, {
+const users: User[] = faker.helpers.multiple(createRandomUser, {
     count: 5,
 });
 
 const PersonList = () => {
+    const [value, setValue] = useDebouncedState('', 200);
+
     return (
         <div className='person-list flex flex-col  bg-white w-1/2 p-4 rounded-xl shadow-xl'>
-            <div className='flex'>
+            <div className='flex justify-between items-center'>
                 <h3 className='text-xl'>Lista esempio</h3>
+                <div className='form-control'>
+                    <input
+                        type='text'
+                        placeholder='Search'
+                        className='input input-bordered w-24 md:w-auto'
+                        onChange={(event) => setValue(event.currentTarget.value?.toLowerCase())}
+                    />
+                </div>
             </div>
             <div className='divider my-2' />
 
             <ul>
-                {users.map((user) => (
-                    <li key={user.userId} className='flex items-center my-2'>
+                {users.filter(el => 
+                    el.name.toLowerCase().includes(value) || el.surname.toLowerCase().includes(value) || el.email.toLowerCase().includes(value)
+                ).map((user) => (
+                    <li key={user.userId} className='flex items-center my-2 '>
                         <img
                             src={user.avatar}
                             alt={user.userId}

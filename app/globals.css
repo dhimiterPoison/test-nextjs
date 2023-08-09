@@ -3,11 +3,36 @@
 @tailwind utilities;
 
 .navbar {
-  /* background-color: rgb(164, 231, 208); */
+	/* background-color: rgb(164, 231, 208); */
 }
 
-/* modal */
+.item {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 0;
+}
 
+.person-list {
+	min-height: 20rem;
+}
+
+.content {
+	min-height: calc(100vh - 4rem);
+}
+
+.user-section-navbar{
+	display: flex!important;
+}
+
+
+
+
+
+
+
+
+
+/* modal */
 .modal {
 	background: rgba(0, 0, 0, 0.5);
 }
@@ -22,7 +47,7 @@
 }
 
 
-.modal-body .form-group:nth-last-child(2).is-lookup + .form-group {
+.modal-body .form-group:nth-last-child(2).is-lookup+.form-group {
 	margin-bottom: 6rem;
 }
 
@@ -32,14 +57,4 @@
 
 .modal-body .form-group:last-child.is-lookup.no-bottom-space {
 	margin-bottom: 4rem !important;
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-}
-
-.person-list{
-	min-height: 20rem;
 }
