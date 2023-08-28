@@ -18,7 +18,7 @@ export default function RootLayout({
         <html lang='en' data-theme='light'>
             <body className={inter.className}>
                 <Navbar />
-                <div className='content p-4 mt-16 bg-emerald-50'>{children}</div>
+                <div className='content mt-20 bg-emerald-50 dark:bg-emerald-950'>{children}</div>
             </body>
         </html>
     );

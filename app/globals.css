@@ -20,11 +20,15 @@
 	min-height: calc(100vh - 4rem);
 }
 
-.user-section-navbar{
-	display: flex!important;
+.user-section-navbar {
+	display: flex !important;
 }
 
-
+.cover-image-gradient {
+	/* mask-image: linear-gradient(rgb(80, 27, 27), transparent); */
+	mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+	mask-mode: alpha;
+}
 
 
 

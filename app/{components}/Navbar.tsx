@@ -23,11 +23,11 @@ const Navbar = () => {
         //         </ul>
         //     </div>
         // </nav>
-        <div className='navbar fixed top-0 bg-emerald-100 md:px-20'>
+        <div className='navbar fixed top-0 bg-emerald-100 md:px-20 z-10'>
             <div className='flex-1'>
-                <a className='btn btn-ghost font-bold text-3xl capitalize text-emerald-700'>
+                <Link href='/' className='btn btn-ghost font-bold text-3xl capitalize text-emerald-700'>
                     GiorgioUI
-                </a>
+                </Link>
             </div>
             <div className='flex-none'>
                 <ul className='menu menu-horizontal px-1 items-center'>
